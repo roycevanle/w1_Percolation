@@ -1,7 +1,7 @@
 /* *****************************************************************************
- *  Name:
- *  Date:
- *  Description:
+ *  Name: Royce Le
+ *  Date: 12.18.19
+ *  Description: Week 1, Percolation Hw
  **************************************************************************** */
 
 public class Percolation {
@@ -16,14 +16,29 @@ public class Percolation {
 
     // opens the site (row, col) if it is not open already
     public void open(int row, int col) {
+        if (row < 1 || col < 1) {
+            throw new IllegalArgumentException("row or col is out of bounds");
+        }
     }
 
     // is the site (row, col) open?
     public boolean isOpen(int row, int col) {
+        if (row < 1 || col < 1) {
+            throw new IllegalArgumentException("row or col is out of bounds");
+        }
+
+        // placeholder
+        return true;
     }
 
     // is the site (row, col) full?
     public boolean isFull(int row, int col) {
+        if (row < 1 || col < 1) {
+            throw new IllegalArgumentException("row or col is out of bounds");
+        }
+
+        // placeholder
+        return true;
     }
 
     // returns the number of open sites
