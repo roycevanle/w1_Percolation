@@ -5,6 +5,12 @@
  **************************************************************************** */
 
 public class Percolation {
+    // percolation grid size
+        //Not sure, int?
+    // which sites are open
+        //Array?
+    // which sites are connected to which other sites
+        //Array?
 
     // test client (optional)
     public static void main(String[] args) {
@@ -43,10 +49,12 @@ public class Percolation {
 
     // returns the number of open sites
     public int numberOfOpenSites() {
+        //
     }
 
     // does the system percolate?
     public boolean percolates() {
+        //
     }
 
 }
