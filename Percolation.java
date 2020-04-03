@@ -23,11 +23,21 @@ public class Percolation {
         Percolation xyz = new Percolation(3);
         xyz.open(1,1);
         xyz.open(1,2);
+        xyz.open(1,3);
         for(int element: xyz.siteHolder) {
             System.out.println(element);
         }
         System.out.println("This is the output:");
         System.out.println(xyz.grid.connected(xyz.xyTo1D(1,1), xyz.xyTo1D(1,2)));
+
+        System.out.println("This is the 2nd output:");
+        System.out.println(xyz.percolates());
+
+        System.out.println("This is the 3rd output:");
+        System.out.println(xyz.grid.find(xyz.xyTo1D(1,1)));
+        System.out.println(xyz.grid.find(xyz.xyTo1D(1,3)));
+        System.out.println(xyz.grid.find(3));
+        System.out.println(xyz.grid.find(4));
 
     }
 
@@ -52,11 +62,11 @@ public class Percolation {
         // 2nd, mark the site as open
         int openIndex = xyTo1D(row, col);
         siteHolder[openIndex] = 1;
-        openSites++; //9 0,1,2,3,4,5,6,7,8,9,10
-        if (col == 1 && !grid.connected(openIndex, gridArea)) {
+        openSites++;
+        if (col <= gridLength && !grid.connected(openIndex, gridArea)) {
             grid.union(openIndex, gridArea);
         }
-        else if (col == gridArea - 1 && !grid.connected(openIndex, gridArea + 1)) {
+        else if (col >= gridArea - gridLength && !grid.connected(openIndex, gridArea + 1)) {
             grid.union(openIndex, gridArea +1);
         }
 
